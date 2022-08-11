@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	const persona = { nombre: "Tomas", altura: "184cm" };
+	return (
+		<div className="App">
+			<header className="App-header">
+				<img src={logo} className="App-logo" alt="logo" />
+				<p>
+					Hello World! {persona.nombre} mide {persona.altura}
+				</p>
+				{/* {ButtonComponent()} */}
+				<ButtonComponent />
+			</header>
+		</div>
+	);
+};
+
+const ButtonComponent = () => {
+	return <button>Hola Mundo</button>;
+};
 
 export default App;
