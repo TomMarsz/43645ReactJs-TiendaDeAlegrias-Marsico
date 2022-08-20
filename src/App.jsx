@@ -1,11 +1,13 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Navbar from "./components/NavBar";
+import Navbar from "./components/NavBar/navbar";
+import Title from "./components/Text/title";
 
 const App = () => {
 	const persona = { nombre: "Tomas", altura: "184cm" };
 	return (
 		<div className="App" style={{fontSize: "20px", borderBottom: "1px solid red"}}>
+			<Title />
 			<Navbar />
 			<header className="App-header">
 				<img src={logo} className="App-logo" alt="logo" />
