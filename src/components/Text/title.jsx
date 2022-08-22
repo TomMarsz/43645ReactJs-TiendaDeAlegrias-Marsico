@@ -1,6 +1,5 @@
-const Title = (props) => {
-  console.log(props)
-  return <h1>Hello World</h1>
+const Title = ({msj}) => {
+  return <h1>{msj}</h1>
 }
 
 export default Title;
