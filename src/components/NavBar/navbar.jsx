@@ -16,37 +16,37 @@ import {
   XIcon,
 } from '@heroicons/react/outline'
 import { ChevronDownIcon } from '@heroicons/react/solid'
+import Cartwidget from '../CartWidget/cartwidget'
 
 const solutions = [
   {
     name: 'Analytics',
-    description: 'Get a better understanding of where your traffic is coming from.',
     href: '#',
     icon: ChartBarIcon,
   },
   {
     name: 'Engagement',
-    description: 'Speak directly to your customers in a more meaningful way.',
     href: '#',
     icon: CursorClickIcon,
   },
-  { name: 'Security', description: "Your customers' data will be safe and secure.", href: '#', icon: ShieldCheckIcon },
+  { 
+    name: 'Security', 
+    href: '#', icon: ShieldCheckIcon 
+  },
   {
     name: 'Integrations',
-    description: "Connect with third-party tools that you're already using.",
     href: '#',
     icon: ViewGridIcon,
   },
   {
     name: 'Automations',
-    description: 'Build strategic funnels that will drive your customers to convert',
     href: '#',
     icon: RefreshIcon,
   },
 ]
 const callsToAction = [
-  { name: 'Watch Demo', href: '#', icon: PlayIcon },
-  { name: 'Contact Sales', href: '#', icon: PhoneIcon },
+  { name: 'Quienes somos', href: '#', icon: PlayIcon },
+  { name: 'Llamanos', href: '#', icon: PhoneIcon },
 ]
 const resources = [
   {
@@ -110,7 +110,7 @@ export default function NavBar() {
                       'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
                     )}
                   >
-                    <span>Solutions</span>
+                    <span>Productos</span>
                     <ChevronDownIcon
                       className={classNames(
                         open ? 'text-gray-600' : 'text-gray-400',
@@ -167,10 +167,10 @@ export default function NavBar() {
             </Popover>
 
             <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
-              Pricing
+              Donde estamos
             </a>
             <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
-              Docs
+              Contacto
             </a>
 
             <Popover className="relative">
@@ -182,7 +182,7 @@ export default function NavBar() {
                       'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
                     )}
                   >
-                    <span>More</span>
+                    <span>Más</span>
                     <ChevronDownIcon
                       className={classNames(
                         open ? 'text-gray-600' : 'text-gray-400',
@@ -245,6 +245,7 @@ export default function NavBar() {
               )}
             </Popover>
           </Popover.Group>
+          <Cartwidget />
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
             <a href="#" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
               Sign in

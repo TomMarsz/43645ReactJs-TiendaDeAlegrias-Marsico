@@ -8,7 +8,7 @@ const App = () => {
 		<div className="App">
 			<NavBar />
 			<Title msj="Tienda de Alegrías"/>
-			<ItemListContainer />
+			<ItemListContainer greeting="Bienvenidos" />
 		</div>
 	);
 };
