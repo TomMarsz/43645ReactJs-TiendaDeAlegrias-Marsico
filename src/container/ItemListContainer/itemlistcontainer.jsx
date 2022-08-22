@@ -1,8 +1,8 @@
 import "./itemlistcontainer.css"
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = ({greeting, color}) => {
   return(
-    <h2> {greeting}</h2>
+    <h2 style={{color: color,}}> {greeting}</h2>
   )
 }
 export default ItemListContainer

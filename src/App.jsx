@@ -8,7 +8,7 @@ const App = () => {
 		<div className="App">
 			<NavBar />
 			<Title msj="Tienda de Alegrías"/>
-			<ItemListContainer greeting="Bienvenidos" />
+			<ItemListContainer color="#5046e5" greeting="Bienvenidos" />
 		</div>
 	);
 };
