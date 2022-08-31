@@ -1,7 +1,7 @@
-import "./title.css"
+import "./title.css";
 
-const Title = ({msj}) => {
-  return <h1>{msj}</h1>
-}
+const Title = ({ titleTxt }) => {
+	return <h1>{titleTxt}</h1>;
+};
 
 export default Title;
