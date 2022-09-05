@@ -1,7 +1,7 @@
 import "./title.css";
 
-const Title = ({ textoTitulo }) => {
-	return <h1>{textoTitulo}</h1>;
+const Title = ({ txt }) => {
+	return <h1>{txt}</h1>;
 };
 
 export default Title;
