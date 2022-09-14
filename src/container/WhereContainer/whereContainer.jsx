@@ -1,6 +1,6 @@
 import Title from "../../components/Title/title";
 
-const DondeEstamosContainer = () => {
+const WhereContainer = () => {
 	return (
 		<>
 			<Title txt="Donde Estamos" color=" text-indigo-700" />
@@ -22,4 +22,4 @@ const DondeEstamosContainer = () => {
 	);
 };
 
-export default DondeEstamosContainer;
+export default WhereContainer;

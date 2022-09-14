@@ -2,7 +2,6 @@ import { useState } from "react";
 
 const ItemCounter = ({ stock, initial, onAdd }) => {
 	const [counter, setCounter] = useState(initial);
-	const [cart, setCart] = useState([]);
 
 	return (
 		<div className="flex justify-center items-center space-x-4 mt-5">
@@ -38,7 +37,7 @@ const ItemCounter = ({ stock, initial, onAdd }) => {
 						onAdd(counter);
 					}}
 				>
-					Add to cart
+					Add to Cart
 				</button>
 			</div>
 		</div>

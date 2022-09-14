@@ -1,15 +1,17 @@
-import ItemCounter from "../ItemCounter/itemcounter";
+import { useState } from "react";
+import ItemCounter from "../ItemCounter/itemCounter";
 import Title from "../Title/title";
 
-const onAdd = (quantity) => {
-	alert(`Compro: ${quantity} Items`);
-};
-
 const ItemDetail = ({ item }) => {
-	console.log(item);
+	const [cart, setCart] = useState([]);
+
+	const onAdd = (quantityToAdd) => {
+		alert(`Agregaste ${quantityToAdd} Items al Carrito`);
+	};
+
 	return (
 		<>
-			<Title txt={`${item.title}`} color="text-indigo-00" />
+			<Title txt={`${item.title}`} color="text-indigo-400" />
 			<div className="group relative">
 				<div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
 					<img

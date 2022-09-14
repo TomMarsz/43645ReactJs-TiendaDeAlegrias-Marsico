@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ItemList from "../../components/ItemList/itemlist";
+import ItemList from "../../components/ItemList/itemList";
 import "./itemlistcontainer.css";
 
 const ItemListContainer = ({ greeting, color }) => {
 	const [products, setProducts] = useState([]);
-	const { idCategory } = useParams();
+	const { idCategory = "bazar" } = useParams();
 	const searchProducts = async () => {
 		try {
 			const response = await fetch(
@@ -20,7 +20,7 @@ const ItemListContainer = ({ greeting, color }) => {
 
 	useEffect(() => {
 		searchProducts();
-	}, []);
+	}, [idCategory]);
 
 	console.log(products);
 
@@ -28,7 +28,7 @@ const ItemListContainer = ({ greeting, color }) => {
 		<>
 			<h2 style={{ color: color }}> {greeting}</h2>
 			<div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-				<ItemList products={products} />
+				<ItemList products={products} category={idCategory} />
 			</div>
 		</>
 	);
