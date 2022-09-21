@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import NavBar from "./components/NavBar/navBar";
-import Title from "./components/Title/title";
-import CheckoutContainer from "./container/CheckoutContainer/checkoutContainer";
-import ContactFormContainer from "./container/ContactFormContainer/contactFormContainer";
-import WhereContainer from "./container/WhereContainer/whereContainer";
-import ItemDetailContainer from "./container/ItemDetailContainer/itemDetailContainer";
-import ItemListContainer from "./container/ItemListContainer/itemListContainer";
+import NavBar from "./components/NavBar/NavBar";
+import Title from "./components/Title/Title";
+import ContactFormContainer from "./container/ContactFormContainer/ContactFormContainer";
+import WhereContainer from "./container/WhereContainer/WhereContainer";
+import ItemDetailContainer from "./container/ItemDetailContainer/ItemDetailContainer";
+import ItemListContainer from "./container/ItemListContainer/ItemListContainer";
+import Cart from "./components/Cart/Cart";
 
 const App = () => {
 	return (
@@ -23,17 +23,15 @@ const App = () => {
 					/>
 					<Route
 						path="/category/:idCategory"
-						element={
-							<ItemListContainer color="#5046e5" greeting="Bienvenido" />
-						}
+						element={<ItemListContainer color="#5046e5" greeting="" />}
 					/>
 					<Route
 						path="/detail/:idCategory/:idItem"
 						element={<ItemDetailContainer />}
 					/>
-					<Route path="/checkout" element={<CheckoutContainer />} />
 					<Route path="/donde-estamos" element={<WhereContainer />} />
 					<Route path="/contacto" element={<ContactFormContainer />} />
+					<Route path="/cart" element={<Cart />} />
 				</Routes>
 			</BrowserRouter>
 		</div>

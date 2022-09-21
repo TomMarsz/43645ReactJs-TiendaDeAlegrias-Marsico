@@ -13,11 +13,11 @@ const ItemCounter = ({ stock, initial, onAdd }) => {
 						setCounter(initial);
 					}
 				}}
-				className="text-white bg-indigo-700 text-base rounded-full w-10 p-1"
+				className="text-white bg-indigo-400 hover:bg-indigo-700 text-base rounded-full w-10 p-1"
 			>
 				-
 			</button>
-			<p className="text-indigo-500">{counter}</p>
+			<p className="text-indigo-500 text-xl">{counter}</p>
 			<button
 				onClick={() => {
 					setCounter(counter + 1);
@@ -26,13 +26,13 @@ const ItemCounter = ({ stock, initial, onAdd }) => {
 						setCounter(initial);
 					}
 				}}
-				className="text-white bg-indigo-700 text-base rounded-full w-10 p-1"
+				className="text-white bg-indigo-400 hover:bg-indigo-700 text-lg rounded-full w-10 p-1"
 			>
 				+
 			</button>
 			<div>
 				<button
-					className="text-white bg-indigo-700 text-base rounded-full p-1"
+					className="text-white bg-indigo-700 text-lg rounded-full px-5 py-3"
 					onClick={() => {
 						onAdd(counter);
 					}}

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ItemList from "../../components/ItemList/itemList";
-import "./itemlistcontainer.css";
+import ItemList from "../../components/ItemList/ItemList";
+import "./ItemListContainer.css";
 
 const ItemListContainer = ({ greeting, color }) => {
 	const [products, setProducts] = useState([]);

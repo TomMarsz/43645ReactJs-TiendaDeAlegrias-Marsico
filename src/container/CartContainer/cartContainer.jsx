@@ -1,4 +1,6 @@
+import Cart from "../../components/Cart/Cart";
+
 const CartContainer = () => {
-	return;
+	return <Cart />;
 };
 export default CartContainer;

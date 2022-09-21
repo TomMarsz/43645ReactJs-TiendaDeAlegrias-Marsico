@@ -1,4 +1,4 @@
-import Title from "../../components/Title/title";
+import Title from "../../components/Title/Title";
 
 const ContactFormContainer = () => {
 	return (

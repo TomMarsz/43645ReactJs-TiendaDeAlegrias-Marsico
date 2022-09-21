@@ -1,5 +1,5 @@
 import { Popover } from "@headlessui/react";
-import Cartwidget from "../CartWidget/cartWidget";
+import Cartwidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
 
 export default function NavBar() {
