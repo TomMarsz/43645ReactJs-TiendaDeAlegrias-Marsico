@@ -12,14 +12,14 @@ const Item = ({ title, thumbnail, price, order, category }) => {
 			</div>
 			<div className="mt-4 flex flex-col justify-items-center">
 				<div>
-					<h3 className="text-lg font-medium text-indigo-700">
+					<h3 className="text-xl font-medium text-indigo-700">
 						<span aria-hidden="true" className="inset-0" />
 						{title}
 					</h3>
 				</div>
-				<p className="text-lg font-medium text-gray-900">${price}</p>
+				<p className="text-xl font-medium text-gray-900">${price}</p>
 				<Link to={`/detail/${category}/${order - 1}`}>
-					<button className="text-white bg-indigo-700 text-base rounded-full p-1">
+					<button className="text-white bg-indigo-700 text-base rounded-full mt-2 py-1 px-3">
 						Ver detalle del producto
 					</button>
 				</Link>

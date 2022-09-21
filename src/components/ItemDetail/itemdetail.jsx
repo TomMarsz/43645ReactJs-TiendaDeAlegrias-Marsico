@@ -1,13 +1,19 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import ItemCounter from "../ItemCounter/ItemCounter";
 import Title from "../Title/Title";
+import { Context } from "../../contexts/CartContext/CartContext";
 
 const ItemDetail = ({ item }) => {
 	const [quantity, setQuantity] = useState();
 	const onAdd = (quantityToAdd) => {
+		addItem(item, quantityToAdd);
 		setQuantity(quantityToAdd);
 	};
+
+	const { addItem } = useContext(Context);
+
+	console.log(quantity);
 
 	return (
 		<>
@@ -23,11 +29,18 @@ const ItemDetail = ({ item }) => {
 				<div className="mt-4 flex flex-col">
 					<h1 className="text-indigo-500">${item.price}</h1>
 					<ItemCounter stock={9} initial={1} onAdd={onAdd} />
-					<Link to={"/cart"}>
-						<button className="text-white  bg-indigo-400 hover:bg-indigo-700 text-base rounded-full p-1 mt-4">
-							Finalizar compra
-						</button>
-					</Link>
+					<div className="flex justify-between m-3">
+						<Link to={"/"}>
+							<button className="text-white  bg-indigo-400 hover:bg-indigo-700 text-base rounded-full py-1 px-3 m-2">
+								Seguir comprando
+							</button>
+						</Link>
+						<Link to={"/cart"}>
+							<button className="text-white  bg-indigo-400 hover:bg-indigo-700 text-base rounded-full py-1 px-3 m-2">
+								Finalizar compra
+							</button>
+						</Link>
+					</div>
 				</div>
 			</div>
 		</>

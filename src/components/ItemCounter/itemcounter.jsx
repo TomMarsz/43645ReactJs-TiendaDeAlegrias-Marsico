@@ -13,7 +13,7 @@ const ItemCounter = ({ stock, initial, onAdd }) => {
 						setCounter(initial);
 					}
 				}}
-				className="text-white bg-indigo-400 hover:bg-indigo-700 text-base rounded-full w-10 p-1"
+				className="text-white bg-indigo-400 hover:bg-indigo-700 text-lg rounded-full w-10 p-1"
 			>
 				-
 			</button>
@@ -32,12 +32,12 @@ const ItemCounter = ({ stock, initial, onAdd }) => {
 			</button>
 			<div>
 				<button
-					className="text-white bg-indigo-700 text-lg rounded-full px-5 py-3"
+					className="text-white bg-indigo-700 text-lg rounded-full px-3 py-1"
 					onClick={() => {
 						onAdd(counter);
 					}}
 				>
-					Add to Cart
+					Agregar al carrito
 				</button>
 			</div>
 		</div>
