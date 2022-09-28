@@ -4,7 +4,7 @@ import { Context } from "../../contexts/CartContext/CartContext";
 const CartItem = ({ item }) => {
   const { removeItem } = useContext(Context);
   const handleRemove = () => {
-    removeItem(item.order_backend);
+    removeItem(item.id);
   };
 
   return (

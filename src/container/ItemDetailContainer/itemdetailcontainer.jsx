@@ -1,26 +1,23 @@
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
 
 const ItemDetailContainer = () => {
-  const [item, setItem] = useState([]);
-  const { idCategory } = useParams();
+  const [item, setItem] = useState({});
   const { idItem } = useParams();
 
-  const getItem = async () => {
-    try {
-      const response = await fetch(
-        `https://api.mercadolibre.com/sites/MLA/search?q=${idCategory}`
-      );
-      const data = await response.json();
-      setItem(data.results[idItem]);
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
   useEffect(() => {
-    getItem();
+    if (idItem) {
+      const db = getFirestore();
+      const itemRef = doc(db, "items", idItem.trim());
+      getDoc(itemRef).then((snapshot) => {
+        const newItem = {
+          ...snapshot.data(),
+        };
+        setItem(newItem);
+      });
+    }
   }, [idItem]);
 
   return (

@@ -12,9 +12,9 @@ const CartContext = ({ children }) => {
    * @param {number} quantity
    */
   const addItem = (item, quantity) => {
-    const before = isInCart(item.order_backend);
+    const before = isInCart(item.id);
     if (before) {
-      const arr = cart.filter((e) => e.order_backend !== item.order_backend);
+      const arr = cart.filter((e) => e.id !== item.id);
       item.quantity = quantity + before.quantity;
       arr.push(item);
       setCart(arr);
@@ -30,7 +30,7 @@ const CartContext = ({ children }) => {
    * @param {number} itemId
    */
   const removeItem = (itemId) => {
-    setCart(cart.filter((e) => e.order_backend !== itemId));
+    setCart(cart.filter((e) => e.id !== itemId));
   };
 
   /**
@@ -43,12 +43,12 @@ const CartContext = ({ children }) => {
 
   /**
    * * isInCart()
-   * "isInCart" returns true if the itemId is found in the cart array.
-   * @param {number} itemId
+   * is a function that takes an itemId as an argument and returns a boolean value based on whether or not the itemId is found in the cart array.
    * @returns The function isInCart is returning a boolean value.
+   * @param {number} itemId
    */
   const isInCart = (itemId) => {
-    return cart.find((e) => e.order_backend === itemId);
+    return cart.find((e) => e.id === itemId);
   };
 
   /**
