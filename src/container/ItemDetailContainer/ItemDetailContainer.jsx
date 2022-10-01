@@ -13,6 +13,7 @@ const ItemDetailContainer = () => {
       const itemRef = doc(db, "items", idItem.trim());
       getDoc(itemRef).then((snapshot) => {
         const newItem = {
+          id: snapshot.id,
           ...snapshot.data(),
         };
         setItem(newItem);
