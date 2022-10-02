@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 import ItemList from "../../components/ItemList/ItemList";
 import "./ItemListContainer.css";
 
 const ItemListContainer = ({ greeting, color }) => {
   const [products, setProducts] = useState([]);
-  const { idCategory } = useParams();
+  // const { idCategory } = useParams();
 
   useEffect(() => {
     const db = getFirestore();
