@@ -29,7 +29,7 @@ const Cart = () => {
 
   const submitOrder = (e) => {
     e.preventDefault();
-    const newOrder = { form, cart, totalPrice };
+    const newOrder = { buyer: form, items: cart, total: totalPrice };
     setOrder(newOrder);
     const db = getFirestore();
     const orderCollection = collection(db, "orders");

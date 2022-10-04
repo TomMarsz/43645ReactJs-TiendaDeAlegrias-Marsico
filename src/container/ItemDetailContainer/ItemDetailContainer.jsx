@@ -12,11 +12,13 @@ const ItemDetailContainer = () => {
       const db = getFirestore();
       const itemRef = doc(db, "items", idItem.trim());
       getDoc(itemRef).then((snapshot) => {
-        const newItem = {
-          id: snapshot.id,
-          ...snapshot.data(),
-        };
-        setItem(newItem);
+        if (snapshot.exists()) {
+          const newItem = {
+            id: snapshot.id,
+            ...snapshot.data(),
+          };
+          setItem(newItem);
+        }
       });
     }
   }, [idItem]);

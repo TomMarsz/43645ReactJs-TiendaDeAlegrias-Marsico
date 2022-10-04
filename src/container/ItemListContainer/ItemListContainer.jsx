@@ -1,16 +1,25 @@
 import { useEffect, useState } from "react";
-// import { useParams } from "react-router-dom";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { useParams } from "react-router-dom";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
 import ItemList from "../../components/ItemList/ItemList";
 import "./ItemListContainer.css";
 
 const ItemListContainer = ({ greeting, color }) => {
   const [products, setProducts] = useState([]);
-  // const { idCategory } = useParams();
+  const { idCategory = "bazar" } = useParams();
 
   useEffect(() => {
     const db = getFirestore();
-    const items = collection(db, "items");
+    const items = query(
+      collection(db, "items"),
+      where("category", "==", idCategory.trim())
+    );
     getDocs(items).then((snapshot) => {
       const docs = snapshot.docs.map((doc) => ({
         id: doc.id,
@@ -18,7 +27,7 @@ const ItemListContainer = ({ greeting, color }) => {
       }));
       setProducts(docs);
     });
-  }, []);
+  }, [idCategory]);
 
   return (
     <>
