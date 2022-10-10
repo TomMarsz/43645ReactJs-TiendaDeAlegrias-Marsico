@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import Swal from "sweetalert2";
 
 export const Context = createContext();
 
@@ -21,6 +22,13 @@ const CartContext = ({ children }) => {
     } else {
       item.quantity = quantity;
       setCart([...cart, item]);
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: `You add ${quantity} Items to Cart`,
+        showConfirmButton: false,
+        timer: 1500,
+      });
     }
   };
 
@@ -38,7 +46,35 @@ const CartContext = ({ children }) => {
    * The clear function is a function that sets the cart to an empty array.
    */
   const clear = () => {
-    setCart([]);
+    if (cart !== 0) {
+      Swal.fire({
+        title: "Estás seguro?",
+        text: "Esta acción no podrá ser revertida!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        cancelButtonText: "Cancelar",
+        confirmButtonText: "Si, vaciar carrito!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Vaciado!",
+            text: "El carrito fue vaciado con éxito!",
+            icon: "success",
+            confirmButtonColor: "#3085d6",
+          });
+          setCart([]);
+        }
+      });
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "¡El carrito está vacío!",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
   };
 
   /**

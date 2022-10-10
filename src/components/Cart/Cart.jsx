@@ -1,5 +1,6 @@
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { useContext, useState, useEffect } from "react";
+import Swal from "sweetalert2";
 import { Context } from "../../contexts/CartContext/CartContext";
 import CartItem from "./CartItem.jsx";
 
@@ -35,6 +36,13 @@ const Cart = () => {
     const orderCollection = collection(db, "orders");
     addDoc(orderCollection, order).then(({ id }) => {
       setId(id);
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: `Your purchase ID is \n ${id}`,
+        showConfirmButton: false,
+        timer: 1500,
+      });
     });
   };
 
@@ -53,7 +61,7 @@ const Cart = () => {
                 <input
                   name="name"
                   type="text"
-                  className="mx-2 text-xl"
+                  className="mx-2 text-xl bg-indigo-200 rounded"
                   onChange={changeHandler}
                   value={form.name}
                 />
@@ -65,7 +73,7 @@ const Cart = () => {
                 <input
                   name="phone"
                   type="number"
-                  className="mx-2 text-xl"
+                  className="mx-2 text-xl bg-indigo-200 rounded"
                   onChange={changeHandler}
                   value={form.phone}
                 />
@@ -77,7 +85,7 @@ const Cart = () => {
                 <input
                   name="email"
                   type="email"
-                  className="mx-2 text-xl"
+                  className="mx-2 text-xl bg-indigo-200 rounded"
                   onChange={changeHandler}
                   value={form.email}
                 />
